@@ -11,6 +11,16 @@
 		<br><br>
 		Password: <form:password path="password"/>
 		<br><br>
+		Role: 
+		<form:select path="role">
+			<form:options items="${user.roles}"/>
+		</form:select>
+		<br><br>
+		Is Active?
+		<form:radiobuttons path="status" items="${user.statusOptions}"/>
+		<br><br>
+		<form:checkboxes items="${user.useOptions}" path="uses"/>
+		<br><br>
 		<input type="submit" value="Submit">
 	</form:form>
 </body>

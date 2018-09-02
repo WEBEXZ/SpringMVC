@@ -18,7 +18,14 @@ public class UserController {
 	
 	@RequestMapping("/processForm")
 	public String processForm(@ModelAttribute("user") User user) {
-		System.out.println(user.getUserName() + " " +user.getPassword());
+		System.out.println("User" + user.getUserName() 
+							+ " " + user.getPassword() 
+							+ " " + user.getRole()
+							+ " " + user.getStatus());
+		System.out.println("User use: ");
+		for (String use : user.getUses()) {
+			System.out.println(use);
+		}
 		return "confirmation";
 	}
 }

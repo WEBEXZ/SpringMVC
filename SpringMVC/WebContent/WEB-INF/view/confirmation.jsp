@@ -1,4 +1,5 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +7,13 @@
 </head>
 <body>
 	<h2>Confirmation</h2>
-	Successful User: ${user.userName} created
+	Successful user ${user.userName} created with the role ${user.role} and status active ${user.status}
+	<br><br>
+	Uses: 
+	<ul>
+		<c:forEach var="temp" items="${user.uses}">
+			<li>${temp}</li>
+		</c:forEach>
+	</ul>
 </body>
 </html>
