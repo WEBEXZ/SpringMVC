@@ -2,12 +2,26 @@ package com.webexz.springmvc;
 
 import java.util.LinkedHashMap;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
+
 public class User {
 	private String userName;
+	@Pattern(regexp="^\\d+$", message="Only numbers")
+	@NotNull(message="is required")
+	@Size(min=5, message="is required")
 	private String password;
 	private String role;
 	private String status;
 	private String[] uses;
+	@NotNull(message="is required")
+	@Min(value=1, message="must be greater than or equal to one")
+	@Max(value=3, message="must be less than or equal to three")
+	private Integer numberSessions;
 	private LinkedHashMap<String, String> roles;
 	private LinkedHashMap<String, String> statusOptions;
 	private LinkedHashMap<String, String> useOptions;
@@ -75,5 +89,13 @@ public class User {
 
 	public LinkedHashMap<String, String> getUseOptions() {
 		return useOptions;
+	}
+
+	public Integer getNumberSessions() {
+		return numberSessions;
+	}
+
+	public void setNumberSessions(Integer numberSessions) {
+		this.numberSessions = numberSessions;
 	}
 }

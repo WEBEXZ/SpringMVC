@@ -10,6 +10,7 @@
 		User: <form:input path="userName"/>
 		<br><br>
 		Password: <form:password path="password"/>
+		<form:errors path="password" cssClass="error"/>
 		<br><br>
 		Role: 
 		<form:select path="role">
@@ -20,6 +21,9 @@
 		<form:radiobuttons path="status" items="${user.statusOptions}"/>
 		<br><br>
 		<form:checkboxes items="${user.useOptions}" path="uses"/>
+		<br><br>
+		Number of sessions: <form:input path="numberSessions"/>
+		<form:errors path="numberSessions" cssClass="error"/>
 		<br><br>
 		<input type="submit" value="Submit">
 	</form:form>
