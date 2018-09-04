@@ -8,6 +8,7 @@
 	<h2>User</h2>
 	<form:form action="processForm" modelAttribute="user">
 		User: <form:input path="userName"/>
+		<form:errors path="userName" cssClass="error"/>
 		<br><br>
 		Password: <form:password path="password"/>
 		<form:errors path="password" cssClass="error"/>

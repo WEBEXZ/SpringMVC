@@ -8,8 +8,11 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import com.webexz.springmvc.validation.Username;
+
 
 public class User {
+	@Username(value="U", message="must start with U" )
 	private String userName;
 	@Pattern(regexp="^\\d+$", message="Only numbers")
 	@NotNull(message="is required")
